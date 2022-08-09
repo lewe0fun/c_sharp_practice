@@ -10,5 +10,5 @@ digits[0]=int.Parse(ReadLine());
 digits[1]=int.Parse(ReadLine());
 digits[2]=int.Parse(ReadLine());
 int max=digits[0];
-for (int i = 0; i < digits.Length-1; i++)if(max<digits[i])max=digits[i];
+for (int i = 0; i < digits.Length; i++)if(max<digits[i])max=digits[i];
 WriteLine($"max={max}");
