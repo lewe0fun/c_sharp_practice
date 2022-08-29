@@ -398,3 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 # project file
 *.csproj
+*.gitignore
+*.sln
