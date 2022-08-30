@@ -175,23 +175,23 @@ public static int[,] getSpiralArr(int size)
 	int[,] result = new int[size, size];
 	int count = 1;
 
-	for (int k = 1; k <= size / 2; k++)
+	for (int i = 1; i <= size / 2; i++)
 	{
-		for (int j = k - 1; j < size - k + 1; j++)
+		for (int j = i - 1; j < size - i + 1; j++)
 		{
-			result[k - 1, j] = count++;
+			result[i - 1, j] = count++;
 		}
-		for (int j = k; j < size - k + 1; j++)
+		for (int j = i; j < size - i + 1; j++)
 		{
-			result[j, size - k] = count++;
+			result[j, size - i] = count++;
 		}
-		for (int j = size - k - 1; j >= k - 1; --j)
+		for (int j = size - i - 1; j >= i - 1; --j)
 		{
-			result[size - k, j] = count++;
+			result[size - i, j] = count++;
 		}
-		for (int j = size - k - 1; j >= k; j--)
+		for (int j = size - i - 1; j >= i; j--)
 		{
-			result[j, k - 1] = count++;
+			result[j, i - 1] = count++;
 		}
 	}
 	return result;
