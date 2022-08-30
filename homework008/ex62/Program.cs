@@ -8,4 +8,4 @@
 using Methods;
 using static System.Console;
 
-printMatrixArr(getSpiralArr(4));
+mtd.printMatrixArr(mtd.getSpiralArr(4));
