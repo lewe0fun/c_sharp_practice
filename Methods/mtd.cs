@@ -140,7 +140,7 @@ public static int[,] multiplyMatrix(int[,] arr1,int[,]arr2)
     return result;
 }
 //Вывод трехмерного массива построчно
-public static void printget3DArr(int[,,]arr)
+public static void print3DArr(int[,,]arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -163,13 +163,32 @@ public static int[,,] get3DArr(int x, int y,int z, int minValue, int maxValue)
         {
             for (int k = 0; k < z; k++)
             {
-                result[i, j, k] = new Random().Next(minValue, maxValue + 1);
+                do
+                {
+                    result[i, j, k] = new Random().Next(minValue, maxValue + 1); 
+                }while(checkForRepInArr(result,result[i,j,k],i,j,k));
+                
+
             }
         }
     }
     return result;
 }
-//
+public static bool checkForRepInArr(int[,,]arr,int value,int ii, int jj, int kk)
+{
+    for (int i=0;i<ii;i++)
+    {
+        for (int j=0;j<jj;j++)
+        {
+            for (int k=0;i<kk;k++)
+            {
+                if(arr[i,j,k]==value)return true;
+            }
+        }
+    }
+    return false;
+}
+//Создание спиральной матрицы
 public static int[,] getSpiralArr(int size)
 {
 	int[,] result = new int[size, size];
@@ -195,5 +214,35 @@ public static int[,] getSpiralArr(int size)
 		}
 	}
 	return result;
+}
+
+//Все натуральные числа в промежутке от M до N
+public static void showDigitsBetween(int m,int n)
+{
+    if (n > m) showDigitsBetween(m,n-1);
+    Write($"{n} ");
+}
+//Cумма натуральных элементов в промежутке от M до N
+public static int sumBetween(int m, int n)
+{
+    if (n <= 0) return 0; 
+    else if (n == m) return m;
+    else return sumBetween(m, n - 1) + n; 
+}
+//Функция Аккермана
+public static int ackermann(int m, int n)
+{
+    if (m == 0)
+    {
+        return n + 1;
+    }
+    else if (n == 0)
+    {
+        return ackermann(m - 1, 1);
+    }
+    else
+    {
+        return ackermann(m - 1, ackermann(m, n - 1));
+    }
 }
 }

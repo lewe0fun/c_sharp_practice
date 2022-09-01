@@ -9,4 +9,4 @@ using Methods;
 using static System.Console;
 
 int[,,] arr = mtd.get3DArr(2, 2, 2, 10, 99);
-mtd.printget3DArr(arr);
+mtd.print3DArr(arr);
